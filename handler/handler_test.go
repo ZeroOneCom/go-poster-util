@@ -10,7 +10,7 @@ package handler
 
 import (
 	"fmt"
-	"github.com/hitailang/poster/core"
+	"github.com/ZeroOneCom/go-poster-util/core"
 	"github.com/rs/xid"
 	"testing"
 )
@@ -44,7 +44,7 @@ func TestNext_SetNext(t *testing.T) {
 	qrCodeHandler := &QRCodeHandler{
 		X:   30,
 		Y:   860,
-		URL: "https://github.com/hitailang/poster",
+		URL: "https://github.com/ZeroOneCom/go-poster-util",
 	}
 	//绘制文字
 	textHandler1 := &TextHandler{

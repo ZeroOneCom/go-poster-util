@@ -6,7 +6,7 @@
 可以直接下载组件，运行main.go查看海报生成效果 
 
 ```bash
-git clone github.com/hitailang/poster 
+git clone github.com/ZeroOneCom/go-poster-util 
 go run main.go
 ```
 ![海报](build/poster_br3km9ro6hip8c5okrg0.png)
@@ -19,7 +19,7 @@ go run main.go
 1、使用go get 命令安装组件
 
 ```bash
-$ go get -u github.com/hitailang/poster
+$ go get -u github.com/ZeroOneCom/go-poster-util
 
 ```
 2、把准备好的海报底图、字体文件放到指定目录，这里放到了assets目录下面，同时新建一个海报输出目录，这里是build目录
@@ -28,8 +28,8 @@ $ go get -u github.com/hitailang/poster
 ```cgo
 import (
 	"fmt"
-	"github.com/hitailang/poster/core"
-	"github.com/hitailang/poster/handler"
+	"github.com/ZeroOneCom/go-poster-util/core"
+	"github.com/ZeroOneCom/go-poster-util/handler"
 	"github.com/rs/xid"
 )
 
@@ -68,7 +68,7 @@ import (
 	qrCodeHandler := &handler.QRCodeHandler{
 		X:   30, // 二维码x坐标
 		Y:   860,// 二维码y坐标
-		URL: "https://github.com/hitailang/poster", // 二维码跳转URL地址
+		URL: "https://github.com/ZeroOneCom/go-poster-util", // 二维码跳转URL地址
 	}
 	//绘制文字
 	textHandler1 := &handler.TextHandler{

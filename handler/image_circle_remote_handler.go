@@ -10,8 +10,8 @@ package handler
 
 import (
 	"fmt"
-	"github.com/hitailang/poster/circlemask"
-	"github.com/hitailang/poster/core"
+	"github.com/ZeroOneCom/go-poster-util/circlemask"
+	"github.com/ZeroOneCom/go-poster-util/core"
 	"image"
 )
 

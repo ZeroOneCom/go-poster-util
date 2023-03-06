@@ -10,17 +10,18 @@ package handler
 
 import (
 	"fmt"
-	"github.com/hitailang/poster/circlemask"
-	"github.com/hitailang/poster/core"
+	"github.com/ZeroOneCom/go-poster-util/circlemask"
+	"github.com/ZeroOneCom/go-poster-util/core"
 	"image"
 	"os"
 )
+
 // ImageCircleLocalHandler 根据Path路径设置圆形图片
 type ImageCircleLocalHandler struct {
 	// 合成复用Next
 	Next
-	X   int
-	Y   int
+	X    int
+	Y    int
 	Path string //./images/xx.png
 }
 
@@ -32,7 +33,7 @@ func (h *ImageCircleLocalHandler) Do(c *Context) (err error) {
 		fmt.Errorf("os.Open err：%v", err)
 	}
 
-	srcImage,_,err := image.Decode(imageFile)
+	srcImage, _, err := image.Decode(imageFile)
 
 	if err != nil {
 		fmt.Errorf("SetRemoteImage image.Decode err：%v", err)
