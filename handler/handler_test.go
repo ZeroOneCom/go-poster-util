@@ -28,7 +28,7 @@ func TestNext_SetNext(t *testing.T) {
 		Path: "../assets/background.png",
 	}
 	//绘制圆形图像
-	imageCircleHandler := &ImageCircleHandler{
+	imageCircleHandler := &ImageCircleRemoteHandler{
 		X:   30,
 		Y:   50,
 		URL: "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLJT9ncWLPov6rAzn4VCPSC4QoAvdangHRB1JgszqCvffggAysvzpm5MDb72Io4g9YAScHEw7xSWg/132",

@@ -11,6 +11,7 @@ package handler
 import (
 	"fmt"
 	"github.com/ZeroOneCom/go-poster-util/core"
+	"github.com/skip2/go-qrcode"
 	"image"
 )
 
