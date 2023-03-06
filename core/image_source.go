@@ -28,10 +28,6 @@ func (s *ImageSource) ReadImage() (image.Image, error) {
 		return nil, err
 	}
 
-	if s.Handler != nil {
-		srcImage = s.Handler(srcImage)
-	}
-
 	if s.Resize != nil {
 		w := s.Resize.X
 		h := s.Resize.Y
@@ -45,6 +41,10 @@ func (s *ImageSource) ReadImage() (image.Image, error) {
 		}
 
 		srcImage = imagemask.ImageResize(srcImage, w, h)
+	}
+
+	if s.Handler != nil {
+		srcImage = s.Handler(srcImage)
 	}
 
 	return srcImage, nil

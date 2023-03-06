@@ -53,8 +53,8 @@ func main() {
 				Path:   "https://image.lingyi360.com/2023/3/5/620fccb0efaca36ae7cb9c7158b6e9d1.jpg",
 				Resize: &image.Point{X: 650},
 				Handler: func(img image.Image) image.Image {
-					//return imagemask.NewRadiusMask(img, 40)
-					return imagemask.NewCircleMask(img)
+					return imagemask.NewRadiusMask(img, 40)
+					//return imagemask.NewCircleMask(img)
 				},
 			},
 			X: 30,
