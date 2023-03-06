@@ -11,6 +11,7 @@ package handler
 import (
 	"fmt"
 	"github.com/ZeroOneCom/go-poster-util/core"
+	"os"
 )
 
 // EndHandler 结束，写在最后，把图片合并到一张图上
@@ -24,12 +25,13 @@ type EndHandler struct {
 func (h *EndHandler) Do(c *Context) (err error) {
 	// 新建文件载体
 	//fileName := "poster-" + xid.New().String() + ".png"
-	merged, err := core.NewMerged(h.Output)
+	file, err := os.Create(h.Output)
+	defer file.Close()
 	if err != nil {
 		fmt.Errorf("core.NewMerged err：%v", err)
 	}
 	// 合并
-	err = core.Merge(c.PngCarrier, merged)
+	err = core.Merge(c.PngCarrier, file)
 	if err != nil {
 		fmt.Errorf("core.Merge err：%v", err)
 	}

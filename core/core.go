@@ -19,6 +19,7 @@ import (
 	"image/color"
 	"image/draw"
 	"image/jpeg"
+	"io"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -211,13 +212,13 @@ func GetResourceReader(url string) (r *bytes.Reader, err error) {
 			return r, err
 		}
 		defer resp.Body.Close()
-		fileBytes, err := ioutil.ReadAll(resp.Body)
+		fileBytes, err := io.ReadAll(resp.Body)
 		if err != nil {
 			return r, err
 		}
 		r = bytes.NewReader(fileBytes)
 	} else {
-		fileBytes, err := ioutil.ReadFile(url)
+		fileBytes, err := os.ReadFile(url)
 		if err != nil {
 			return nil, err
 		}
