@@ -25,6 +25,7 @@ type TextHandler struct {
 	B        uint8
 	Text     string
 	FontPath string
+	Align    core.TextAlign
 }
 
 // Do 地址逻辑
@@ -42,7 +43,7 @@ func (h *TextHandler) Do(c *Context) (err error) {
 	dText := core.NewDrawText(c.PngCarrier)
 	//设置颜色
 	dText.SetColor(h.R, h.G, h.B)
-	err = dText.MergeText(h.Text, h.Size, trueTypeFont, h.X, h.Y)
+	err = dText.MergeText(h.Text, h.Size, trueTypeFont, h.X, h.Y, h.Align)
 	if err != nil {
 		fmt.Errorf("dText.MergeText err：%v", err)
 	}
