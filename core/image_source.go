@@ -3,6 +3,8 @@ package core
 import (
 	"github.com/ZeroOneCom/go-poster-util/imagemask"
 	"image"
+	_ "image/jpeg"
+	_ "image/png"
 )
 
 type ImageSourceType int
