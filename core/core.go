@@ -18,7 +18,7 @@ import (
 	"image"
 	"image/color"
 	"image/draw"
-	"image/jpeg"
+	"image/png"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -187,8 +187,8 @@ func (dtext *DText) MergeText(title string, size float64, tf *truetype.Font, x i
 }
 
 // 合并到图片
-func Merge(png draw.Image, merged *os.File) error {
-	err := jpeg.Encode(merged, png, nil)
+func Merge(img draw.Image, merged *os.File) error {
+	err := png.Encode(merged, img)
 	if err != nil {
 		return err
 	}
