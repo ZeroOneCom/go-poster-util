@@ -187,7 +187,7 @@ func (dtext *DText) MergeText(title string, size float64, tf *truetype.Font, x i
 }
 
 // 合并到图片
-func Merge(img draw.Image, merged *os.File) error {
+func Merge(img draw.Image, merged io.Writer) error {
 	err := png.Encode(merged, img)
 	if err != nil {
 		return err
